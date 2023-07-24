@@ -1,5 +1,5 @@
-import 'package:bmicalculator_provider/providers/bmiprovider.dart';
-import 'package:bmicalculator_provider/screens/homescreen.dart';
+import 'package:bmicalculator_provider/core/providers/bmiprovider.dart';
+import 'package:bmicalculator_provider/views/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

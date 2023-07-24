@@ -1,4 +1,5 @@
-import 'package:bmicalculator_provider/services/calculation.dart';
+import 'package:bmicalculator_provider/core/services/calculation.dart';
+import 'package:bmicalculator_provider/core/services/toastutilise.dart';
 import 'package:flutter/material.dart';
 
 class BmiProvider extends ChangeNotifier {
@@ -9,9 +10,13 @@ class BmiProvider extends ChangeNotifier {
   get result => _result;
   static String? status;
 
+  void showUtilise(String message) {
+    ToastUtilse.showToast(message);
+  }
+
   cal() {
     _result = BmiCalculation.calculation(heightcontroller, weightcontroller);
-    print("value is :${_result}");
+    // print("value is :${_result}");
 
     if (_result! <= 7) {
       status = ('underweight');
@@ -23,7 +28,8 @@ class BmiProvider extends ChangeNotifier {
       status = ('obese');
     }
 
-    print(status);
+    showUtilise('Your BMI is :$_result\n' + 'Your Status is :$status');
+
     notifyListeners();
   }
 
